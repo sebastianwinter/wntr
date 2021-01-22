@@ -1,4 +1,6 @@
 node_modules
+node_modules/**
+node_modules/
 .cache
 dist
 src/.temp/
@@ -9,3 +11,4 @@ src/.temp/
 **/**/.DS_Store
 .DS_Store
 /.htpasswd
+node_modules/axios/CHANGELOG.md
