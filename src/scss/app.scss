@@ -1,0 +1,48 @@
+/* By Athlon Front-End Team */
+
+/* Core variables */
+@import 'base/vars';
+
+/* CSS Reset */
+@import 'base/reset';
+
+/* CSS print */
+@import 'base/print';
+
+/* Fonts */
+@import 'base/fonts';
+
+/* Mixins, helpers and functions */
+@import 'base/mixins';
+
+/* Vendor */
+
+/* Components */
+
+/* Browser specific styles */
+@import 'dirty/hacks';
+
+/* Demo styles */
+
+body {
+  background: blue;
+  color: $white;
+  font-family: 'Protest', arial, serif;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding: 2rem 1rem;
+
+  @include respond-to(medium) {
+    font-size: 1rem;
+  }
+}
+
+p {
+  border-left: 4px solid white;
+  padding-left: 1rem;
+  width: auto;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
