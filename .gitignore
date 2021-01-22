@@ -3,6 +3,7 @@ node_modules/**
 node_modules/
 .cache
 dist
+dist/
 src/.temp/
 /src/.temp/config.js
 /src/.temp/now.js
