@@ -13,3 +13,4 @@ src/.temp/
 .DS_Store
 /.htpasswd
 node_modules/axios/CHANGELOG.md
+.DS_Store
