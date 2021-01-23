@@ -3,7 +3,7 @@ import '../scss/app.scss';
 import Prismic from 'prismic-javascript';
 
 // Your JS Code goes here
-document.querySelector('p').innerHTML = "app.js says hello :)"
+document.querySelector('p').innerHTML = "app.js says hello AGAIN :)"
 
 //var Prismic = require('prismic-javascript');
  
@@ -15,4 +15,4 @@ Prismic.api("http://wntr.prismic.io/api", function(error, api) {
     }
     console.log("Documents: ", response.documents);
   });
-});;
+});;	
