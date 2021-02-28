@@ -1,0 +1,9 @@
+.stories {
+  width: 100%;
+  min-height: 50px;
+  background-color: blue;
+
+  /*@include respond-to(medium) {
+    background-color: red;
+  }*/
+}

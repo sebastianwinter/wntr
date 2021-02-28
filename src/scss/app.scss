@@ -18,6 +18,7 @@
 /* Vendor */
 
 /* Components */
+@import '../components/stories/stories';
 
 /* Browser specific styles */
 @import 'dirty/hacks';
@@ -25,13 +26,13 @@
 /* Demo styles */
 
 body {
-  background: blue;
-  color: $white;
-  font-family: 'Protest', arial, serif;
+  background: $white;
+  color: $dark-blue;
+  font-family: 'IBM Plex Mono', monospace;
   text-align: center;
   font-size: 0.8rem;
   line-height: 1.5;
-  padding: 2rem 1rem;
+  padding: 0;
 
   @include respond-to(medium) {
     font-size: 1rem;

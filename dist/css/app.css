@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap);
 /* By Athlon Front-End Team */
 /* Core variables */
 /**
@@ -200,19 +201,152 @@ input {
 */
 /* Vendor */
 /* Components */
+.stories {
+  width: 100%;
+  min-height: 50px;
+  background-color: #0F2256;
+  padding: 2rem 1rem;
+  /*@include respond-to(medium) {
+    background-color: red;
+  }*/ }
+
+.story {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  margin: 0 40px 40px 0; }
+  .story.is-open .story__content {
+    display: block; }
+  .story__label {
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: auto;
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: -0.03rem; }
+  .story__cover {
+    border: 3px solid #3663DC;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 auto; }
+    .story__cover img {
+      width: 100%;
+      height: 100%;
+      border: 4px solid #0F2256;
+      border-radius: 50%; }
+  .story__content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #3663DC;
+    display: none;
+    z-index: 20; }
+  .story__bullets {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 5px;
+    display: flex;
+    opacity: 1;
+    transition: opacity 200ms;
+    z-index: 80; }
+  .story__bullet {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    margin: 2px;
+    overflow: hidden; }
+    .story__bullet span {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: auto;
+      top: 0;
+      bottom: 0;
+      background-color: white;
+      width: 0%; }
+  .story__box {
+    width: 100%;
+    max-width: 414px;
+    position: relative;
+    margin: 0 auto; }
+    .story__box:after {
+      position: relative;
+      content: " ";
+      padding-bottom: 177.86%;
+      width: 100%;
+      display: block;
+      border-radius: 2p; }
+  .story__item {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    z-index: 0;
+    background-color: grey; }
+    .story__item.is-front {
+      z-index: 10; }
+  .story__next, .story__prev {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 50; }
+  .story__next {
+    left: 50%;
+    right: 0; }
+  .story__prev {
+    right: 50%;
+    left: 0; }
+  .story__close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 7px;
+    top: 15px;
+    bottom: auto;
+    left: auto;
+    z-index: 20;
+    cursor: pointer;
+    z-index: 90;
+    opacity: 1;
+    transition: opacity 200ms; }
+
+.is-paused {
+  opacity: 0; }
+
 /* Browser specific styles */
 /**
  * Dirty hacks, yes internet explorer, we are looking at you
 */
 /* Demo styles */
 body {
-  background: blue;
-  color: #fff;
-  font-family: 'Protest', arial, serif;
+  background: #fff;
+  color: #0F2256;
+  font-family: 'IBM Plex Mono', monospace;
   text-align: center;
   font-size: 0.8rem;
   line-height: 1.5;
-  padding: 2rem 1rem; }
+  padding: 0; }
   @media (min-width: 720px) {
     body {
       font-size: 1rem; } }
