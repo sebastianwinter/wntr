@@ -1,0 +1,80 @@
+.hero {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	h1 {
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&-logo {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 120px;
+		height: 120px;
+		pointer-events: none;
+		
+		@include respond-to(small) {
+			width: 220px;
+			height: 220px;
+		}
+	}
+}
+
+#debug {
+	color: red;
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+  }
+  
+  svg {
+	pointer-events: none;
+	width: 100%;
+  }
+  svg * {
+	fill: white;
+  }
+  svg #sizekeeper {
+	fill: none;
+  }
+  
+  .tap-handler {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 0, 0, 0);
+	z-index: 200;
+  }
+  
+  .toggle-spikes {
+	position: absolute;
+	bottom: 0;
+	right: 25px;
+	z-index: 300;
+	cursor: pointer;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+
+	@include respond-to(small) {
+		  font-size: 14px;
+	  }
+  }

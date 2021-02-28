@@ -27,7 +27,11 @@
 		}
 
 		&--narrow {
-			padding: 0 10%;
+			padding: 0 1rem;
+			
+			@include respond-to(small) {
+				padding: 0 10%;
+			}
 		}
 	}
 
@@ -37,6 +41,10 @@
 
 		&:visited {
 			color: $blue;
+		}
+
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 		

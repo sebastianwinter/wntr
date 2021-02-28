@@ -15,7 +15,7 @@
 	}
 	
 	&-name {
-		width: 170px;
+		width: 220px;
 		margin: 2rem 0;
 	}
 
@@ -26,7 +26,7 @@
 		line-height: 1.4;
 		letter-spacing: 1px;
 		font-size: 16px;
-		
+
 		@include respond-to(small) {
 			font-size: 18px;
 		}
