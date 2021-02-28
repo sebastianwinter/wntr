@@ -1,0 +1,49 @@
+.profile {
+	width: 100%;
+	padding: 1rem;
+	max-width: 600px;
+	margin: 0 auto;
+	margin-top: 4rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	
+	&-image {
+		width: 220px;
+		height: 220px;
+		border-radius: 50%;
+	}
+	
+	&-name {
+		width: 170px;
+		margin: 2rem 0;
+	}
+
+	&-links {
+		display: flex;
+		color: $blue;
+		text-transform: uppercase;
+		line-height: 1.4;
+		letter-spacing: 1px;
+
+		i {
+			text-decoration: none;
+			margin-left: 10px;
+		}
+	}
+	
+	&-link {
+		text-decoration: underline;
+		font-size: 16px;
+		color: $blue;
+		margin-right: 10px;
+
+		@include respond-to(small) {
+			font-size: 18px;
+		}
+	}
+
+	/*@include respond-to(medium) {
+		background-color: red;
+	}*/
+}

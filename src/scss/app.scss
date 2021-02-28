@@ -19,6 +19,9 @@
 
 /* Components */
 @import '../components/stories/stories';
+@import '../components/profile/profile';
+@import '../components/article/article';
+@import '../components/footer/footer';
 
 /* Browser specific styles */
 @import 'dirty/hacks';
@@ -39,11 +42,18 @@ body {
   }
 }
 
-p {
+.scrollUpIndicator {
+  width: 100%;
+  color: $black;
+  padding: 1rem;
+  text-align: left;
+}
+
+/*p {
   border-left: 4px solid white;
   padding-left: 1rem;
   width: auto;
   display: inline-block;
   margin-top: 1rem;
-}
+}*/
 
