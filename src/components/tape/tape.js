@@ -1,4 +1,6 @@
-export default class Tape {
+//tape animation is in p5-hero draw()
+
+/*export default class Tape {
     init(root) {
         this.root = root
         this.render()
@@ -7,4 +9,4 @@ export default class Tape {
     render() {
         
     }
-}
+}*/

@@ -3,13 +3,26 @@
 	background-color: $dark-blue;
 	padding: 1rem 0;
 	font-size: 16px;
+	height: 60px;
+	position: relative;
+	overflow: hidden;
 
   	@include respond-to(small) {
 		font-size: 18px;
 	}
 
-  &--light {
+	&-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 1rem;
+		transform: translateY(-50%);
+		//border: 1px dashed red;
+		white-space: nowrap;
+	}
+
+  	&--light {
 	  background-color: $blue;
+	  margin-top: 60px;
 
 	  .tape-anwser {
 		  color: $dark-blue;

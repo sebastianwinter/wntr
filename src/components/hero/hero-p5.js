@@ -1,18 +1,15 @@
 import * as p5 from "p5";
 console.log(p5)
 // ########## P5 Code ##########
+//let body = document.querySelector('body')
+let container =  document.querySelector('.hero');
+let tapes = Array.from(document.querySelectorAll('.tape'));
+let tapesContent = Array.from(document.querySelectorAll('.tape-wrapper'));
 
-
-
-/*s.disableFriendlyErrors = true;
-
-// eco-mode = only render if window focused
-window.onblur = function () {
-	s.noLoop()
-}
-window.onfocus = function () {
-	s.loop();
-}*/
+tapesContent.forEach((tape, index) => {
+    let tapeContent = tape.innerHTML;
+    tape.innerHTML = tapeContent + tapeContent + tapeContent;
+})
 
 let density = 2 * 12; // must be devidable by 12
 let bgcolor = [255,255,255];
@@ -26,6 +23,8 @@ let cells = [];
 let spikes = false;
 let animateSpikes = 0;
 
+let animateTape = 0;
+
 const debug = document.querySelector('#debug')
 /*let mouseR = 5;
 let mouseRMax = 50;
@@ -34,7 +33,6 @@ let mouseRSpeed = 1;*/
 const sketch = (s) => {
     s.setup = () => {
         let cnv = s.createCanvas(s.windowWidth, s.windowHeight);
-        let container =  document.querySelector('.hero');
         cnv.parent(container);
         //frameRate(12);
         
@@ -75,8 +73,23 @@ const sketch = (s) => {
         } else {
             animateSpikes = clamp(animateSpikes - 0.1);
         }
-        debug.innerHTML = strokeWidth
         //noLoop();
+
+
+        let tapeSpeed = s.map(s.mouseX, 0, s.windowWidth, -0.1, 0.1)
+
+        tapes.forEach((tape, index) => {
+            if(animateTape > 100) {
+                animateTape = tapeSpeed;
+            } else if(animateTape < 0) {
+                animateTape = 100 + (tapeSpeed);
+            }
+            let tapeWidth = tapesContent[index].offsetWidth;
+            debug.innerHTML = tapeWidth + s.windowWidth
+            tapesContent[index].style.transform = "translate3d(-" + s.map(animateTape, 0, 100, 0, tapeWidth / 3) + "px, -50%, 0)";
+        })
+
+        animateTape = animateTape + tapeSpeed;
 
         //mark center
         // let green = color(0,255,0)
@@ -98,6 +111,20 @@ const sketch = (s) => {
 }
 
 const sketchBlob = new p5(sketch);
+
+
+sketchBlob.disableFriendlyErrors = true;
+
+// eco-mode = only render if window focused
+window.onblur = function () {
+	sketchBlob.noLoop()
+}
+window.onfocus = function () {
+	sketchBlob.loop();
+}
+
+
+
 
 function drawBlob(res, explorerPoints, averagedPoints, startPoints, angle, posX, posY, currentCell) {
 	sketchBlob.beginShape();
@@ -323,6 +350,7 @@ function Blob(posX, posY, angle) {
 
 function tap(clickX, clickY) {
 	let index = cells.length;
+    clickY = clickY + window.scrollY;
 	
 	if(clickX > marginX && clickX < sketchBlob.width - marginX && clickY > marginY && clickY < sketchBlob.height - marginY) {
 		let intersectionExplorer = checkIntersection(clickX, clickY, false); // average = false

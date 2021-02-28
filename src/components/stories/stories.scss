@@ -2,11 +2,19 @@
   width: 100%;
   min-height: 50px;
   background-color: $dark-blue;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
+  overflow-x: scroll;
 
   /*@include respond-to(medium) {
     background-color: red;
   }*/
+
+  &-wrapper {
+	// display: flex;
+	// flex-wrap: nowrap;
+	width: auto;
+	white-space: nowrap;
+  }
 }
 
 
@@ -15,10 +23,17 @@
 	width: 80px;
 	height: 80px;
 	display: inline-block;
-	margin: 0 40px 40px 0;
+	//margin: 0 40px 40px 0;
+	margin: 20px;
+	margin-bottom: 40px;
+	flex-shrink: 0;
 	
 	&:first-of-type {
-		margin: 0 40px 40px 40px;
+		margin-left: 40px;
+	}
+
+	&:last-of-type {
+		margin-right: 40px;
 	}
 	
 	&.is-open {
@@ -66,7 +81,7 @@
 		right: 0;
 		background-color: $blue;
 		display: none;
-		z-index: 20;
+		z-index: 420;
 	}
 	
 	&__bullets {

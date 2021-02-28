@@ -205,19 +205,27 @@ input {
   width: 100%;
   min-height: 50px;
   background-color: #0F2256;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
+  overflow-x: scroll;
   /*@include respond-to(medium) {
     background-color: red;
   }*/ }
+  .stories-wrapper {
+    width: auto;
+    white-space: nowrap; }
 
 .story {
   position: relative;
   width: 80px;
   height: 80px;
   display: inline-block;
-  margin: 0 40px 40px 0; }
+  margin: 20px;
+  margin-bottom: 40px;
+  flex-shrink: 0; }
   .story:first-of-type {
-    margin: 0 40px 40px 40px; }
+    margin-left: 40px; }
+  .story:last-of-type {
+    margin-right: 40px; }
   .story.is-open .story__content {
     display: block; }
   .story__label {
@@ -252,7 +260,7 @@ input {
     right: 0;
     background-color: #3663DC;
     display: none;
-    z-index: 20; }
+    z-index: 420; }
   .story__bullets {
     position: absolute;
     top: 0;
@@ -436,12 +444,22 @@ input {
   width: 100%;
   background-color: #0F2256;
   padding: 1rem 0;
-  font-size: 16px; }
+  font-size: 16px;
+  height: 60px;
+  position: relative;
+  overflow: hidden; }
   @media (min-width: 480px) {
     .tape {
       font-size: 18px; } }
+  .tape-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    white-space: nowrap; }
   .tape--light {
-    background-color: #3663DC; }
+    background-color: #3663DC;
+    margin-top: 60px; }
     .tape--light .tape-anwser {
       color: #0F2256; }
   .tape--dark {
