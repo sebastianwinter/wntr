@@ -402,6 +402,13 @@ input {
       @media (min-width: 480px) {
         .article-paragraph--narrow {
           padding: 0 10%; } }
+  .article h2 {
+    color: #3663DC;
+    text-align: left;
+    width: 100%;
+    margin: 2rem 0 1rem 0; }
+  .article p {
+    width: 100%; }
   .article-link {
     color: #3663DC;
     text-transform: uppercase; }
@@ -459,7 +466,12 @@ input {
     white-space: nowrap; }
   .tape--light {
     background-color: #3663DC;
-    margin-top: 60px; }
+    margin-top: 60px;
+    margin-bottom: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 200; }
     .tape--light .tape-anwser {
       color: #0F2256; }
   .tape--dark {
@@ -559,6 +571,9 @@ body {
   margin-top: 100vh;
   width: 100%;
   position: relative; }
+  .content--legal {
+    margin-top: 0;
+    padding-bottom: 2rem; }
 
 .scrollUpIndicator, .scrollDownIndicator {
   width: 100%;

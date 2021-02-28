@@ -23,6 +23,10 @@
   	&--light {
 	  background-color: $blue;
 	  margin-top: 60px;
+	  margin-bottom: 40px;
+	  position: sticky;
+	  top: 0;
+	  z-index: 200;
 
 	  .tape-anwser {
 		  color: $dark-blue;
