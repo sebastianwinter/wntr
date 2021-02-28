@@ -1,0 +1,30 @@
+.tape {
+	width: 100%;
+	background-color: $dark-blue;
+	padding: 1rem 0;
+	font-size: 16px;
+
+  	@include respond-to(small) {
+		font-size: 18px;
+	}
+
+  &--light {
+	  background-color: $blue;
+
+	  .tape-anwser {
+		  color: $dark-blue;
+	  }
+	}
+	
+	&--dark {
+		background-color: $dark-blue;
+
+		.tape-anwser {
+			color: $blue;
+		}
+  }
+
+  &-question {
+	  color: white;
+  }
+}

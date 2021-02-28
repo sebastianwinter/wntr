@@ -1,7 +1,7 @@
 .profile {
 	width: 100%;
 	padding: 1rem;
-	max-width: 600px;
+	max-width: $article-max-width;
 	margin: 0 auto;
 	margin-top: 4rem;
 	display: flex;
@@ -25,25 +25,20 @@
 		text-transform: uppercase;
 		line-height: 1.4;
 		letter-spacing: 1px;
+		font-size: 16px;
+		
+		@include respond-to(small) {
+			font-size: 18px;
+		}
 
 		i {
 			text-decoration: none;
-			margin-left: 10px;
+			//margin-left: 10px;
 		}
 	}
 	
 	&-link {
 		text-decoration: underline;
-		font-size: 16px;
 		color: $blue;
-		margin-right: 10px;
-
-		@include respond-to(small) {
-			font-size: 18px;
-		}
 	}
-
-	/*@include respond-to(medium) {
-		background-color: red;
-	}*/
 }

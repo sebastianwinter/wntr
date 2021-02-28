@@ -1,8 +1,8 @@
 .footer {
-	width: 100%;
-	max-width: calc(700px - 2rem);
+	width: calc(100% - 2rem);
+	max-width: calc(#{$article-max-width} - 2rem);
 	margin: 0 auto;
-	margin-top: 2rem;
+	margin-top: 0;
 	margin-bottom: 2rem;
 	padding: 1rem 0;
 	display: flex;
@@ -11,14 +11,14 @@
 	justify-content: space-between;
 	border-top: 2px solid $blue;
 
-	font-size: 16px;
+	font-size: 12px;
 	line-height: 1.4;
 	letter-spacing: 1px;
 	color: $blue;
 	text-align: left;
 
 	@include respond-to(small) {
-		font-size: 18px;
+		font-size: 14px;
 	}
 
 	&-link {

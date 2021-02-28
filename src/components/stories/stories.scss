@@ -17,12 +17,15 @@
 	display: inline-block;
 	margin: 0 40px 40px 0;
 	
+	&:first-of-type {
+		margin: 0 40px 40px 40px;
+	}
+	
 	&.is-open {
 		.story__content {
 			display: block;
 		}
-	}
-	
+	}	
 	
 	&__label {
 		color: $white;
