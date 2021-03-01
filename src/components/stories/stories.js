@@ -46,11 +46,11 @@ export default class Stories {
         this.root.querySelector(".story__prev").addEventListener('click', e => {
             if(!this.pausedTime) {
             if(this.itemIndex ==  0) {
-                this.progress = 0
+                this.progress = 0;
             } else {
                 this.storyBullets[this.itemIndex].style.width = '0%';
                 this.itemIndex = this.itemIndex - 1
-                this.progress = 0
+                this.progress = 0;
                 this.pushFront(this.itemIndex)	
             }
             }
@@ -149,9 +149,40 @@ export default class Stories {
             items[index].play();
         }
     }
+
+    /*animate() {
+        console.log(this.progress)
+        if(this.open) {
+            this.progress = this.progress + 0.5
+            console.log(this.storyBullets[this.itemIndex])
+            this.storyBullets[this.itemIndex].style.width = this.progress + '%';
+        }   
+    
+        //continue / switch img
+        if(this.progress >= 100) {
+            if(this.itemIndex == this.itemCount - 1) {
+                this.close()
+                this.root.querySelector('.story__cover').style.border = "2px solid #d3d3d3";
+            } else {
+                this.itemIndex = this.itemIndex + 1
+                this.pushFront(this.itemIndex)
+                this.progress = 0
+                //console.log('again / next')
+                this.rafID = requestAnimationFrame(this.animate)
+            }
+        } else if(this.open && !this.paused) {
+            //console.log('again')
+            //request animation Frame not workin properly
+            let self = this;
+            this.rafID = requestAnimationFrame(self.animate)
+            //this.rafID = window.webkitRequestAnimationFrame(() => this.animate());
+        }
+    }*/
+    
 }
 
 function animate(story) {
+    console.log(story.progress)
     if(story.open) {
         story.progress = story.progress + 0.5
         console.log(story.storyBullets[story.itemIndex])
@@ -168,12 +199,14 @@ function animate(story) {
             story.pushFront(story.itemIndex)
             story.progress = 0
             //console.log('again / next')
-            story.rafID = requestAnimationFrame(animate)
+            //story.rafID = requestAnimationFrame(animate)
+            story.rafID = requestAnimationFrame(() => animate(story))
         }
     } else if(story.open && !story.paused) {
         //console.log('again')
         //request animation Frame not workin properly
-        story.rafID = requestAnimationFrame(animate)
+        //story.rafID = requestAnimationFrame(animate)
+        story.rafID = requestAnimationFrame(() => animate(story))
     }
 }
 

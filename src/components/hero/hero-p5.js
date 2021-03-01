@@ -36,20 +36,37 @@ const sketch = (s) => {
         cnv.parent(container);
         //frameRate(12);
         
-        cells[0] = new Blob(s.width / 2, s.height / 2, density); // X, Y, angle (amount)
-        cells[0].build();
-        
-        cells[1] = new Blob(s.width / 4 * 3, s.height / 4 * 3, density); // X, Y, angle (amount)
-        cells[1].build();
-        
-        cells[2] = new Blob(s.width / 4, s.height / 4, density); // X, Y, angle (amount)
-        cells[2].build();
+		let setupRandom = s.random(); 
 
-        cells[3] = new Blob(s.width * 0.8, s.height * 0.3, density); // X, Y, angle (amount)
-        cells[3].build();
+		//three random setups
+		if(setupRandom < 0.33) {
+			cells[0] = new Blob(s.width / 2, s.height / 2, density); // X, Y, angle (amount)
+			cells[0].build();
+			
+			cells[1] = new Blob(s.width / 4 * 3, s.height / 4 * 3, density); // X, Y, angle (amount)
+			cells[1].build();
+			
+			cells[2] = new Blob(s.width / 4, s.height / 4, density); // X, Y, angle (amount)
+			cells[2].build();
+	
+			cells[3] = new Blob(s.width * 0.8, s.height * 0.3, density); // X, Y, angle (amount)
+			cells[3].build();
+	
+			cells[4] = new Blob(s.width * 0.2, s.height * 0.7, density); // X, Y, angle (amount)
+			cells[4].build();
+		} else if(setupRandom > 0.33 && setupRandom < 0.66) {
+			cells[0] = new Blob(s.width / 2, s.height / 2, density); // X, Y, angle (amount)
+			cells[0].build();
 
-        cells[4] = new Blob(s.width * 0.2, s.height * 0.7, density); // X, Y, angle (amount)
-        cells[4].build();
+			cells[1] = new Blob(s.width / 4 * 3, s.height / 4 * 3, density); // X, Y, angle (amount)
+			cells[1].build();
+			
+			cells[2] = new Blob(s.width / 4, s.height / 4, density); // X, Y, angle (amount)
+			cells[2].build();
+		} else {
+			cells[0] = new Blob(s.width / 2, s.height / 2, density); // X, Y, angle (amount)
+			cells[0].build();
+		}
     }
 
     s.draw = () => {
