@@ -3,11 +3,13 @@
 	background-color: $dark-blue;
 	padding: 1rem 0;
 	font-size: 16px;
-	height: 60px;
+	height: 40px;
 	position: relative;
 	overflow: hidden;
-
-  	@include respond-to(small) {
+	pointer-events: none;
+	
+	@include respond-to(small) {
+		height: 60px;
 		font-size: 18px;
 	}
 

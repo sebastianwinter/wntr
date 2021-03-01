@@ -99,9 +99,9 @@ const sketch = (s) => {
     }
 
     s.windowResized = () => {
-        if(s.width <= s.windowWidth && s.height <= s.windowHeight ) {
+        if(s.width <= s.windowWidth) { // && s.height <= s.windowHeight -> dont change on height because of iphone url bars
             s.resizeCanvas(s.windowWidth, s.windowHeight);
-        } else {
+        } else if (s.width >= s.windowWidth) {
             s.resizeCanvas(s.windowWidth, s.windowHeight);
             cells = [];
             cells[0] = new Blob(s.width / 2, s.height / 2, density); // X, Y, angle (amount)
