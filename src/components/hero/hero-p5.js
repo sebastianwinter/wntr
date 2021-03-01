@@ -85,7 +85,7 @@ const sketch = (s) => {
                 animateTape = 100 + (tapeSpeed);
             }
             let tapeWidth = tapesContent[index].offsetWidth;
-            debug.innerHTML = tapeWidth + s.windowWidth
+            //debug.innerHTML = tapeWidth + s.windowWidth
             tapesContent[index].style.transform = "translate3d(-" + s.map(animateTape, 0, 100, 0, tapeWidth / 3) + "px, -50%, 0)";
         })
 
@@ -411,10 +411,10 @@ let spikesButton = document.querySelector('.toggle-spikes')
 spikesButton.addEventListener('click', e => {
 	if(!spikes) {
 		spikes = true
-		spikesButton.innerHTML = "feeling smooth?"
+		spikesButton.classList.add("spikey");
 	} else {
 		spikes = false
-		spikesButton.innerHTML = "feeling sharp?"
+		spikesButton.classList.remove("spikey");
 	}
 })
 

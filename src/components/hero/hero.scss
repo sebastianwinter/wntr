@@ -76,5 +76,57 @@ canvas {
 
 	@include respond-to(small) {
 		  font-size: 14px;
-	  }
+	}
+
+	&:hover {
+		.toggle-spikes-text {
+			text-decoration: underline;
+		}
+	}
+
+	.text-smooth {
+		display: none;
+	}
+
+	&.spikey {
+		.smoothie-icon {
+			opacity: 1;
+		}
+
+		.spikey-icon {
+			opacity: 0;
+		}
+
+		.text-spikey {
+			display: none;
+		}
+
+		.text-smooth {
+			display: inline-block;
+		}
+	}
+
+	&-icon {
+		position: relative;
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		margin-left: 5px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			transition: opacity 200ms;
+		}
+	}
+
+	.smoothie-icon {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		opacity: 0;
+	}
+
   }
