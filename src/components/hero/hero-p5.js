@@ -2,7 +2,8 @@ import * as p5 from "p5";
 console.log(p5)
 // ########## P5 Code ##########
 //let body = document.querySelector('body')
-let container =  document.querySelector('.hero');
+let container = document.querySelector('.hero');
+let canvasSpacer = document.querySelector('.canvas-spacer');
 let tapes = Array.from(document.querySelectorAll('.tape'));
 let tapesContent = Array.from(document.querySelectorAll('.tape-wrapper'));
 
@@ -34,6 +35,8 @@ const sketch = (s) => {
     s.setup = () => {
         let cnv = s.createCanvas(s.windowWidth, s.windowHeight);
         cnv.parent(container);
+		canvasSpacer.style.width = s.windowWidth + "px";
+		canvasSpacer.style.height = s.windowHeight + "px";
         //frameRate(12);
         
 		let setupRandom = s.random(); 
@@ -116,10 +119,14 @@ const sketch = (s) => {
     }
 
     s.windowResized = () => {
-        if(s.width <= s.windowWidth) { // && s.height <= s.windowHeight -> dont change on height because of iphone url bars
+        if(s.width < s.windowWidth) { // && s.height <= s.windowHeight -> dont change on height because of iphone url bars
             s.resizeCanvas(s.windowWidth, s.windowHeight);
-        } else if (s.width >= s.windowWidth) {
-            s.resizeCanvas(s.windowWidth, s.windowHeight);
+			canvasSpacer.style.width = s.windowWidth + "px";
+			canvasSpacer.style.height = s.windowHeight + "px";
+        } else if (s.width > s.windowWidth) {
+			s.resizeCanvas(s.windowWidth, s.windowHeight);
+			canvasSpacer.style.width = s.windowWidth + "px";
+			canvasSpacer.style.height = s.windowHeight + "px";
             cells = [];
             cells[0] = new Blob(s.width / 2, s.height / 2, density); // X, Y, angle (amount)
             cells[0].build();

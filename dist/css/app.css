@@ -606,8 +606,12 @@ body {
   color: white;
   background: #3663DC; }
 
+.canvas-spacer {
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw; }
+
 .content {
-  margin-top: 100vh;
   width: 100%;
   position: relative; }
   .content--legal {
